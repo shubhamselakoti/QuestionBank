@@ -1,0 +1,147 @@
+/* App Container */
+.container {
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Title */
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+/* Search Box */
+.search-box {
+  width: 100%;
+  padding: 10px;
+  margin: 20px 0;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.search-box:focus {
+  outline: none;
+  border-color: #4caf50;
+}
+
+/* Questions Section */
+.questions {
+  margin-top: 20px;
+}
+
+/* Question Card */
+.question-card {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.question {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Instruction for Read-Along */
+.instruction {
+  font-size: 1rem;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+/* Anagram Input */
+.anagram-input {
+  width: 80%;
+  padding: 8px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.anagram-input:focus {
+  outline: none;
+  border-color: #4caf50;
+}
+
+/* Correct/Incorrect Feedback */
+.correct {
+  color: green;
+  font-weight: bold;
+}
+
+.wrong {
+  color: red;
+  font-weight: bold;
+}
+
+/* MCQ Options */
+.options {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.option {
+  background-color: #f1f1f1;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.option:hover {
+  background-color: #ddd;
+}
+
+.option.correct {
+  background-color: #4caf50;
+  color: white;
+}
+
+.option.wrong {
+  background-color: #f44336;
+  color: white;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  padding: 10px 15px;
+  font-size: 1rem;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+.pagination button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.pagination span {
+  font-size: 1.2rem;
+  margin: 0 10px;
+}
+
+/* No Results */
+.no-results {
+  font-size: 1.2rem;
+  color: #888;
+  margin-top: 20px;
+}
