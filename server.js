@@ -1,9 +1,11 @@
 const express = require('express');
 const mongoose = require('mongoose');
 require('dotenv').config()
+const cors = require('cors')
 
 
 const app = express();
+app.use(cors())
 
 const mongoURI = "mongodb+srv://"+process.env.SECURITY_KEY_USER+":"+process.env.SECURITY_KEY+"@questionbank.xecvk.mongodb.net/questions";
 
