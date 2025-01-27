@@ -50,11 +50,18 @@ app.get('/get', async (req, res) => {
       subType = type.slice(8);
     }
 
-    const searchQuery = {
-      ...(searchTerm && { title: { $regex: new RegExp(searchTerm, 'i') } }),
-      ...(type !== 'ALL' && { type: type.includes('ANAGRAM') ? 'ANAGRAM' : type }),
-      ...(type.includes('ANAGRAM') && subType && { anagramType: subType }),
-    };
+    const searchQuery = {};
+
+    if (searchTerm) {
+      searchQuery.title = { $regex: new RegExp(searchTerm, 'i') };
+    }
+    if (type !== 'ALL') {
+      searchQuery.type = type.includes('ANAGRAM') ? 'ANAGRAM' : type;
+    }
+    if (type.includes('ANAGRAM') && subType) {
+      searchQuery.anagramType = subType;
+    }
+
 
     const data = await SpeakXque.find(searchQuery)
       .skip(skip)
