@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { CircleCheckBig, CircleX} from 'lucide-react';
 
 const AnagramQuestion = ({ question, onAnswer, answered }) => {
   const [selectedBlocks, setSelectedBlocks] = useState([]);
@@ -95,8 +96,12 @@ const AnagramQuestion = ({ question, onAnswer, answered }) => {
           <p className="feedback-text">
             {selectedBlocks.join(question.anagramType === 'WORD' ? '' : ' ') ===
             question.solution
-              ? 'Correct!'
-              : `Incorrect. The correct answer is: ${question.solution}`}
+              ? (
+                  <><CircleCheckBig className='resultIcon' /> Correct!</>
+                  )  : (
+                          <><CircleX className='resultIcon' /> Incorrect. The correct answer is: {question.solution} </>
+                      )
+            }
           </p>
         </div>
       )}

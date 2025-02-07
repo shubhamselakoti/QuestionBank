@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { CircleCheckBig, CircleX } from 'lucide-react';
 
 const MCQQuestion = ({ question, onAnswer, answered }) => {
   const [selectedOption, setSelectedOption] = useState(null);
@@ -59,10 +60,13 @@ const MCQQuestion = ({ question, onAnswer, answered }) => {
         >
           <p className="feedback-text">
             {selectedOption === shuffledOptions?.find((o) => o.isCorrectAnswer)?.text
-              ? 'Correct!'
-              : `Incorrect. The correct answer is: ${
-                  shuffledOptions?.find((o) => o.isCorrectAnswer)?.text
-                }`}
+              ? (
+                  <><CircleCheckBig className='resultIcon' /> Correct!</>
+                ) : (
+                    <><CircleX className='resultIcon' />
+                     Incorrect. The correct answer is: {shuffledOptions?.find((o) => o.isCorrectAnswer)?.text} </>
+                  )
+            }
           </p>
         </div>
       )}

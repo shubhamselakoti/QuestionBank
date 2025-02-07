@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import { CircleCheckBig, CircleX } from 'lucide-react';
 
 const ReadAlongQuestion = ({ question, onAnswer, answered }) => {
   const [userInput, setUserInput] = useState('');
 
   const handleSubmit = () => {
-    const isCorrect = userInput.trim().toLowerCase() === question.title.toLowerCase();
+    const isCorrect = userInput.trim().toLowerCase() === question.title.toLowerCase() || userInput.trim().toLowerCase() === 'yes';
     onAnswer(userInput, isCorrect);
   };
 
@@ -46,8 +47,13 @@ const ReadAlongQuestion = ({ question, onAnswer, answered }) => {
             <p className="feedback-text">
             {(userInput.trim().toLowerCase() === question.title.trim().toLowerCase() || 
                 userInput.trim().toLowerCase() === 'yes')
-                ? 'Correct!'
-                : `Incorrect. The correct answer is: ${question.title}`}
+                ? (
+                  <><CircleCheckBig className='resultIcon' /> Correct!</>
+                )
+                : (
+                  <><CircleX className='resultIcon' /> Incorrect. The correct answer is: {question.title} </>
+                )
+            }
             </p>
         </div>
         )}
