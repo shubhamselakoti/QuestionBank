@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import AnagramQuestion from './questions/AnagramQuestion';
 import MCQQuestion from './questions/MCQQuestion';
 import ReadAlongQuestion from './questions/ReadAlongQuestion';
+import ContentQuestion from './questions/ContentQuestion';
 
 const QuestionCard = ({ question, onAnswer }) => {
   const [answered, setAnswered] = useState(false);
@@ -45,6 +46,12 @@ const QuestionCard = ({ question, onAnswer }) => {
           question={question}
           onAnswer={handleAnswer}
           answered={answered}
+        />
+      )}
+
+      {(question.type === 'CONVERSATION' || question.type === "CONTENT_ONLY") && (
+        <ContentQuestion
+          question={question}
         />
       )}
     </div>
