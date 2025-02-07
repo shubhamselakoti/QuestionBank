@@ -37,6 +37,10 @@ const speakXqueSchema = new mongoose.Schema({
 const SpeakXque = new mongoose.model("SpeakXQue", speakXqueSchema);
 
 
+const escapeRegex = (string) => {
+  return string.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+};
+
 app.get('/get', async (req, res) => {
   try {
     const page = parseInt(req.query.page) || 1;
@@ -53,7 +57,8 @@ app.get('/get', async (req, res) => {
     const searchQuery = {};
 
     if (searchTerm) {
-      searchQuery.title = { $regex: new RegExp(searchTerm, 'i') };
+      const escapedSearchTerm = escapeRegex(searchTerm);
+      searchQuery.title = { $regex: new RegExp(escapedSearchTerm, 'i') };
     }
     if (type !== 'ALL') {
       searchQuery.type = type.includes('ANAGRAM') ? 'ANAGRAM' : type;
