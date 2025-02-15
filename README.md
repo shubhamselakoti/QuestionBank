@@ -1,7 +1,7 @@
 
 # Question Bank
 
-A large variety of questions includes: ANAGRAMS, MCQ, SAY(WRITE) ALOUD
+A large variety of questions includes: ANAGRAMS, MCQ, SAY(WRITE) ALONG
 
 ## Tech Stack
 
@@ -24,3 +24,7 @@ https://questionbankspeakx.netlify.app/
 #### Pagination
 #### search query
 #### MongoDB custom API
+
+## How To Install in LOCAL:
+
+
