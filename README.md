@@ -17,6 +17,7 @@ A large variety of questions includes: ANAGRAMS, MCQ, SAY(WRITE) ALOUD
 
 https://questionbankspeakx.netlify.app/
 
+![Performance - LightHouse](https://github.com/user-attachments/assets/a983b614-64b7-4968-a641-5517df998bae)
 
 ## Optimizations
 
